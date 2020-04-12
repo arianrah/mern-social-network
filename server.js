@@ -7,6 +7,9 @@ const PORT = process.env.PORT || 1337
 //Connect to atlas
 connectDB()
 
+//Init middleware
+app.use(express.json({ extended: false }))
+
 //Def Routes
 app.use('/api/users', require('./routes/api/users'))
 app.use('/api/profile', require('./routes/api/profile'))

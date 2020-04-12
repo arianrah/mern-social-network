@@ -25,7 +25,11 @@ router.post(
 		const error = validationResult(req)
 		if (!errors.isEmpty()) {
 			return res.status(400).json({ errors: errors.array() })
-		}
+    }
+    
+
+
+    
 		res.send('Users route')
 	}
 )

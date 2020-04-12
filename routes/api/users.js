@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { check, validationResult } = require('express-validator/check')
+const { check, validationResult } = require('express-validator')
 
 //@route    POST api/users
 //@desc     Registers user
@@ -25,11 +25,8 @@ router.post(
 		const error = validationResult(req)
 		if (!errors.isEmpty()) {
 			return res.status(400).json({ errors: errors.array() })
-    }
-    
+		}
 
-
-    
 		res.send('Users route')
 	}
 )

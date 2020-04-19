@@ -65,7 +65,7 @@ router.get('/:id', auth, async (req, res) => {
 	try {
 		const post = await Post.findById(req.params.id)
 		if (!post) {
-			res.status(404).json({ message: 'Post not found' })
+			res.status(404).json({ msg: 'Post not found' })
 		}
 		res.json(post)
 	} catch (err) {
@@ -81,11 +81,11 @@ router.delete('/:id', auth, async (req, res) => {
 	try {
 		const post = await Post.findById(req.params.id)
 		if (!post) {
-			res.status(404).json({ message: 'Post not found' })
+			res.status(404).json({ msg: 'Post not found' })
 		}
 		//check if user owns the post to be deleted
 		if (post.user.toString() !== req.user.id) {
-			return res.status(401).json({ message: 'User not authorized' })
+			return res.status(401).json({ msg: 'User not authorized' })
 		}
 		await post.remove()
 		res.json({ message: 'Post removed' })
@@ -104,7 +104,7 @@ router.put('/like/:id', auth, async (req, res) => {
 		if (
 			post.likes.filter(like => like.user.toString() === req.user.id).length > 0
 		) {
-			return res.status(400).json({ message: 'User already liked' })
+			return res.status(400).json({ msg: 'User already liked' })
 		}
 		post.likes.unshift({ user: req.user.id })
 		await post.save()
@@ -125,7 +125,7 @@ router.put('/unlike/:id', auth, async (req, res) => {
 			post.likes.filter(like => like.user.toString() === req.user.id).length ===
 			0
 		) {
-			return res.status(400).json({ message: 'Post has not been liked' })
+			return res.status(400).json({ msg: 'Post has not been liked' })
 		}
 		const removeIndex = post.likes
 			.map(like => like.user.toString())
@@ -195,11 +195,11 @@ router.delete('/comment/:id/:comment_id', auth, async (req, res) => {
 		)
 		// Make sure comment exists
 		if (!comment) {
-			return res.status(404).json({ message: 'Comment does not exist' })
+			return res.status(404).json({ msg: 'Comment does not exist' })
 		}
 		// Check user
 		if (comment.user.toString() !== req.user.id) {
-			return res.status(401).json({ message: 'User not authorized' })
+			return res.status(401).json({ msg: 'User not authorized' })
 		}
 
 		post.comments = post.comments.filter(

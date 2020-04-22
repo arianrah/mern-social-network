@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Navbar from './components/layout/Navbar'
 import Landing from './components/layout/Landing'
+import Dashboard from './components/dashboard/Dashboard'
 import Register from './components/auth/Register'
+import PrivateRoute from './components/routing/PrivateRoute'
 import Login from './components/auth/Login'
 import Alert from './components/layout/Alert'
 
@@ -34,6 +36,7 @@ const App = () => {
 						<Switch>
 							<Route exact path="/register" component={Register} />
 							<Route exact path="/Login" component={Login} />
+							<PrivateRoute exact path="/Dashboard" component={Dashboard} />
 						</Switch>
 					</section>
 				</Fragment>

@@ -40,5 +40,8 @@
 			"last 1 safari version"
 		]
 	},
-	"proxy": "http://localhost:1337"
+	"proxy": {
+		"target": "http://localhost:1337",
+		"secure": false
+	}
 }

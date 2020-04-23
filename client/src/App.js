@@ -14,6 +14,7 @@ import { Provider } from 'react-redux'
 import store from './store'
 import { loadUser } from './actions/auth'
 import setAuthToken from './utils/setAuthToken'
+import ProfileForm from './components/profile-form/ProfileForm'
 
 import './App.css'
 
@@ -36,7 +37,12 @@ const App = () => {
 						<Switch>
 							<Route exact path="/register" component={Register} />
 							<Route exact path="/Login" component={Login} />
-							<PrivateRoute exact path="/Dashboard" component={Dashboard} />
+							<PrivateRoute exact path="/dashboard" component={Dashboard} />
+							<PrivateRoute
+								exact
+								path="/create-profile"
+								component={ProfileForm}
+							/>
 						</Switch>
 					</section>
 				</Fragment>

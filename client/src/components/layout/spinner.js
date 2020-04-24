@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react'
 import spinner from './spinner.gif'
 
+//git
+
 export default () => (
 	<Fragment>
 		<img

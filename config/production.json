@@ -1,0 +1,6 @@
+{
+	"mongoURI": "mongodb+srv://ari604:db1456@devcon-ia453.mongodb.net/test?retryWrites=true&w=majority",
+	"jwtSecret": "mstoken",
+	"githubClientId": "1a17be6092aa7c566d2f",
+	"githubSecret": "37f96335eeb5777020a4eb85529af27ce293e97d"
+}

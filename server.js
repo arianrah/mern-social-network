@@ -3,23 +3,22 @@ const connectDB = require('./config/db')
 const path = require('path')
 
 const app = express()
-const PORT = process.env.PORT || 1337
 
-//Connect to atlas
+// Connect Database
 connectDB()
 
-//Init middleware
-app.use(express.json({ extended: false }))
+// Init Middleware
+app.use(express.json())
 
-//Def Routes
+// Define Routes
 app.use('/api/users', require('./routes/api/users'))
+app.use('/api/auth', require('./routes/api/auth'))
 app.use('/api/profile', require('./routes/api/profile'))
 app.use('/api/posts', require('./routes/api/posts'))
-app.use('/api/auth', require('./routes/api/auth'))
 
-//serve static assets for productions
+// Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
-	// set staic folder
+	// Set static folder
 	app.use(express.static('client/build'))
 
 	app.get('*', (req, res) => {
@@ -27,4 +26,6 @@ if (process.env.NODE_ENV === 'production') {
 	})
 }
 
-app.listen(PORT, () => console.log(`Connected to port ${PORT}`))
+const PORT = process.env.PORT || 1337
+
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`))

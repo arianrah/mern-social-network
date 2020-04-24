@@ -10,7 +10,7 @@ const initialState = {
 	location: '',
 	status: '',
 	skills: '',
-	githubusername: '',
+	githubuser: '',
 	bio: '',
 	twitter: '',
 	facebook: '',
@@ -51,7 +51,7 @@ const ProfileForm = ({
 		location,
 		status,
 		skills,
-		githubusername,
+		githubuser,
 		bio,
 		twitter,
 		facebook,
@@ -144,8 +144,8 @@ const ProfileForm = ({
 					<input
 						type="text"
 						placeholder="Github Username"
-						name="githubusername"
-						value={githubusername}
+						name="githubuser"
+						value={githubuser}
 						onChange={onChange}
 					/>
 					<small className="form-text">

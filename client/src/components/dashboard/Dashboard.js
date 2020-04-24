@@ -5,7 +5,7 @@ import { getCurrentProfile, deleteAccount } from '../../actions/profile'
 import DashboardActions from './DashboardActions'
 import Experience from './Experiences'
 import Education from './Education'
-import Spinner from '../layout/spinner'
+import Spinner from '../layout/Spinner'
 import { Link } from 'react-router-dom'
 
 const Dashboard = ({

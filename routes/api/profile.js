@@ -7,7 +7,7 @@ const config = require('config')
 
 const Profile = require('../../models/Profile')
 const User = require('../../models/User')
-const Post = require('../../models/Posts')
+const Post = require('../../models/Post')
 
 // @route     GET api/profile/me
 // @desc      Profile of current user

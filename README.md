@@ -1,6 +1,6 @@
 ## DevCon
 
-Social Media app built with React.js, Express, MongoDB, Node.js (MERN Stack)
+Social Media app built with React.js, Express, MongoDB, Node.js (MERN Stack). SASS for styling.
 
 live demo: https://evening-ridge-29071.herokuapp.com/
 ![DevCon welcome page](./demo/homepage.png 'Welcome Screenshot')

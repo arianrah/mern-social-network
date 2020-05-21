@@ -3,7 +3,7 @@
 Social Media app built with React.js, Express, MongoDB, Node.js (MERN Stack)
 
 live demo: https://evening-ridge-29071.herokuapp.com/
-![DevCon welcome page](./demo/hp.png 'Welcome Screenshot')
+![DevCon welcome page](./demo/homepage.png 'Welcome Screenshot')
 
 ### <span style="color:#6699CC">Learning Goals:</span>
 
